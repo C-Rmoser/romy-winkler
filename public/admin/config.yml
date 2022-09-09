@@ -1,0 +1,107 @@
+backend:
+  name: git-gateway
+  branch: master # Branch to update (optional; defaults to master)
+  site_url: https://romy-winkler.at
+
+locale: 'de'
+
+media_folder: "public/images" # Media files will be stored in the repo under static/images/uploads
+public_folder: "/images" # The src attribute for uploaded media will begin with /images/uploads
+
+collections:
+  - label: "Sektionen"
+    name: "sections"
+    files:
+      - label: "Willkommen"
+        name: "welcome"
+        file: "cms/sections/welcome.json"
+        extension: "json"
+        fields:
+          - {label: Überschrift, name: headline, widget: string}
+          - {label: Intro Text, name: content, widget: text}
+      - label: "Kontaktdaten"
+        name: "contact"
+        file: "cms/sections/contact.json"
+        extension: "json"
+        fields:
+          - {label: Telefonnummer, name: phone, widget: string}
+          - {label: E-Mail Adresse, name: email, widget: string}
+  - name: "bio" # Used in routes, e.g., /admin/collections/blog
+    label: "Berufliche Laufbahn" # Used in the UI
+    folder: "cms/bio" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template, e.g., title.md
+    extension: "json"
+    fields: # The fields for each document, usually in front matter
+      - {label: "Kurzform (optional)", name: "title", widget: "text"}
+      - {label: "Listenpunkt", name: "milestone", widget: "text"}
+  - name: "services-fusspflege" # Used in routes, e.g., /admin/collections/blog
+    label: "Behandlungen Fusspflege" # Used in the UI
+    folder: "cms/services/fusspflege" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template, e.g., title.md
+    extension: "json"
+    fields: # The fields for each document, usually in front matter
+      - {label: "Art der Behandlung", name: "title", widget: "string"}
+      - {label: "Preis", name: "price", widget: "number"}
+      - {label: "Dauer in Minuten", name: "duration", widget: "number"}
+      - {label: "Beschreibung", name: "description", widget: "text"}
+  - name: "piercings" # Used in routes, e.g., /admin/collections/blog
+    label: "Piercings" # Used in the UI
+    folder: "cms/services/piercing" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template, e.g., title.md
+    extension: "json"
+    fields: # The fields for each document, usually in front matter
+      - label: "Kategorie"
+        name: "category"
+        widget: "select"
+        options: ["Ohr", "Nase", "Lippen", "Brust", "Bauchnabel", "Wechsel / Dehnen / Beratung / Behandlung und Kontrolle"]
+      - {label: "Piercing Name", name: "title", widget: "string"}
+      - {label: "Preis", name: "price", widget: "number"}
+      - {label: "Dauer in Minuten", name: "duration", widget: "number"}
+      - {label: "Beschreibung", name: "description", widget: "text"}
+  - name: "augen" # Used in routes, e.g., /admin/collections/blog
+    label: "Behandlungen Augen" # Used in the UI
+    folder: "cms/services/augen" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template, e.g., title.md
+    extension: "json"
+    fields: # The fields for each document, usually in front matter
+      - {label: "Art der Behandlung", name: "title", widget: "string"}
+      - {label: "Preis", name: "price", widget: "number"}
+      - {label: "Dauer in Minuten", name: "duration", widget: "number"}
+      - {label: "Beschreibung", name: "description", widget: "text"}
+  - name: "gesicht" # Used in routes, e.g., /admin/collections/blog
+    label: "Behandlungen Gesicht" # Used in the UI
+    folder: "cms/services/gesicht" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template, e.g., title.md
+    extension: "json"
+    fields: # The fields for each document, usually in front matter
+      - {label: "Art der Behandlung", name: "title", widget: "string"}
+      - {label: "Preis", name: "price", widget: "number"}
+      - {label: "Dauer in Minuten", name: "duration", widget: "number"}
+      - {label: "Beschreibung", name: "description", widget: "text"}
+  - name: "manikuere" # Used in routes, e.g., /admin/collections/blog
+    label: "Behandlungen Manikuere" # Used in the UI
+    folder: "cms/services/manikuere" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template, e.g., title.md
+    extension: "json"
+    fields: # The fields for each document, usually in front matter
+      - {label: "Art der Behandlung", name: "title", widget: "string"}
+      - {label: "Preis", name: "price", widget: "number"}
+      - {label: "Dauer in Minuten", name: "duration", widget: "number"}
+      - {label: "Beschreibung", name: "description", widget: "text"}
+  - name: "koerper" # Used in routes, e.g., /admin/collections/blog
+    label: "Behandlungen Körper" # Used in the UI
+    folder: "cms/services/koerper" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template, e.g., title.md
+    extension: "json"
+    fields: # The fields for each document, usually in front matter
+      - {label: "Art der Behandlung", name: "title", widget: "string"}
+      - {label: "Preis", name: "price", widget: "number"}
+      - {label: "Dauer in Minuten", name: "duration", widget: "number"}
+      - {label: "Beschreibung", name: "description", widget: "text"}

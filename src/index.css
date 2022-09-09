@@ -1,0 +1,51 @@
+/* ./src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: Forum;
+}
+
+@layer base {
+  @font-face {
+    font-family: Forum;
+    font-weight: 400;
+    src: url(./fonts/Forum-Regular.ttf) format("truetype");
+  }
+  @font-face {
+    font-family: WorkSans;
+    font-weight: 400;
+    src: url(./fonts/WorkSans-Regular.ttf) format("truetype");
+  }
+  @font-face {
+    font-family: Lora;
+    font-weight: 400;
+    src: url(./fonts/Lora-Regular.ttf) format("truetype");
+  }
+  @font-face {
+    font-family: Lora;
+    font-style: italic;
+    font-weight: 400;
+    src: url(./fonts/Lora-Italic.ttf) format("truetype");
+  }
+  @font-face {
+    font-family: Lora;
+    font-weight: 500;
+    src: url(./fonts/Lora-Medium.ttf) format("truetype");
+  }
+  @font-face {
+    font-family: Lora;
+    font-weight: 600;
+    src: url(./fonts/Lora-SemiBold.ttf) format("truetype");
+  }
+  @font-face {
+    font-family: Lora;
+    font-weight: 700;
+    src: url(./fonts/Lora-Bold.ttf) format("truetype");
+  }
+}
